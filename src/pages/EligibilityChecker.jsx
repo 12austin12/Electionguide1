@@ -78,21 +78,21 @@ const EligibilityChecker = () => {
             </div>
           </div>
         ) : (
-          <div className="checker-result">
+          <div className="checker-result" aria-live="polite">
             {isEligible ? (
               <div className="result-success">
-                <div className="result-icon">✅</div>
+                <div className="result-icon" aria-hidden="true">✅</div>
                 <h2>{language === 'en' ? 'You are likely eligible to vote!' : '¡Es probable que sea elegible para votar!'}</h2>
                 <p>{language === 'en' ? 'Next step: Make sure you are registered.' : 'Siguiente paso: Asegúrese de estar registrado.'}</p>
               </div>
             ) : (
               <div className="result-error">
-                <div className="result-icon">❌</div>
+                <div className="result-icon" aria-hidden="true">❌</div>
                 <h2>{language === 'en' ? 'You might not be eligible.' : 'Es posible que no sea elegible.'}</h2>
                 <p>{language === 'en' ? 'Based on your answers, you may not meet the federal requirements to vote.' : 'Según sus respuestas, es posible que no cumpla con los requisitos federales para votar.'}</p>
               </div>
             )}
-            <button className="btn btn-primary mt-4" onClick={reset}>
+            <button className="btn btn-primary mt-4" onClick={reset} aria-label={language === 'en' ? 'Start Over' : 'Comenzar de Nuevo'}>
               {language === 'en' ? 'Start Over' : 'Comenzar de Nuevo'}
             </button>
           </div>

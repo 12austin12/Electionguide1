@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/Electionguide1/',
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/setupTests.js'],
+    globals: true,
+    env: {
+      VITE_GEMINI_API_KEY: 'dummy-key'
+    }
+  }
 })
